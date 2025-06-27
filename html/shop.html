@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-commerce watch website">
+  <meta name="keywords" content="home,product,blog">
+  <meta name="author" content="Saket Yadav">
+  <title>Pulse/shop</title>
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        updateCart();
+        alert(name + " has been added to the cart!");
+    }
+
+    function updateCart() {
+        const cartContainer = document.getElementById("cart-items");
+        cartContainer.innerHTML = "";
+        cart.forEach((item, index) => {
+            const cartItem = document.createElement("p");
+            cartItem.textContent = `${item.name} - $${item.price}`;
+            cartContainer.appendChild(cartItem);
+        });
+    }
+</script>
+  <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    width: 100%;
+   background-color: #abdbe3;
+    background-size: cover;
+    background-position: center;
+    color: rgb(37, 3, 3);
+    padding: 40px 0;
+  }
+  
+  .navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    margin-bottom: 30px;
+   height: 50px;
+   width: 50px;
+    
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: rgb(27, 16, 16);
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #f0a500;
+  }
+  
+  .sign-in a {
+    text-decoration: none;
+    color: rgb(21, 53, 133);
+    font-size: 16px;
+    border: 1px solid rgb(27, 3, 3);
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .sign-in a:hover {
+    background: white;
+    color: #333;
+  }
+  
+  .navbar-bottom {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .search-box {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  </style>
+   <script>
+    function updateDateTime() {
+        const now = new Date();
+        const dateTimeString = now.toLocaleString();
+        document.getElementById("datetime").innerText = dateTimeString;
+    }
+    setInterval(updateDateTime, 1000);
+</script>
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-top">
+      <div class="logo"><img src="../images/logo/logo.png"></div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../html/shop.html">Shop</a></li>
+        <li><a href="../html/blog.html">Blog</a></li>
+        <li><a href="../html/research.html">Research</a></li>
+        <li><a href="../html/about us.html">About Us</a></li>
+        <li><a href="../html/support.html">Support</a></li>
+      </ul>
+      <div class="sign-in">
+        <a href="../html/sign in.html">Sign In</a>
+      </div>
+    </div>
+    
+  </nav>
+  <h2 style="text-align: center;">Our Watches</h2>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 20px;">
+      <script>
+          const watches = [
+              { name: "Brihaspati", price: 299, img: "../images/watch photos/p1.png" },
+              { name: "Everest Gun", price: 399, img: "../images/watch photos/p2.png" },
+              { name: "Alankar", price: 349, img: "../images/watch photos/p3.png" },
+              { name: "Aquadeep", price: 459, img: "../images/watch photos/p4.png" },
+              { name: "Ballade", price: 279, img: "../images/watch photos/p5.png" },
+              { name: "Zephyros", price: 499, img: "../images/watch photos/p6.png" },
+              { name: "Oronova", price: 319, img: "../images/watch photos/p7.png" },
+              { name: "Dhruvansh", price: 289, img: "../images/watch photos/p8.png" },
+              { name: "Cryostar", price: 329, img: "../images/watch photos/p9.png" },
+              { name: "Solarius", price: 419, img: "../images/watch photos/p10.png" },
+              { name: "Nivalis", price: 379, img: "../images/watch photos/p11.png" },
+              { name: "Aetheris", price: 269, img: "../images/watch photos/p12.png" }
+          ];
+
+          function getRandomRating() {
+              return (Math.random() * (5 - 1) + 1).toFixed(1);
+          }
+
+          watches.forEach(watch => {
+              document.write(`
+                  <div style="position: relative; border: 1px solid #ddd; padding: 10px; text-align: center; background: #f9f9f9;">
+                      <img src="${watch.img}" alt="${watch.name}" style="width: 100%; height: auto;">
+                      <div style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); color: white; padding: 10px;" class="watch-info">
+                          <h3>${watch.name}</h3>
+                          <strike>Price: $${watch.price}</strike>
+                          <p>Discounted: $${(watch.price * 0.8).toFixed(2)}</p>
+                          <p>Rating: ${getRandomRating()} ⭐</p>
+                          <button onclick="addToCart('${watch.name}', '${watch.price * 0.8}')" style="padding: 5px 10px; background-color: #ff6600; color: white; border: none; cursor: pointer;">Add to Cart</button>
+                      </div>
+                  </div>
+              `);
+          });
+      </script>
+  </div>
+
+  <h2 style="text-align: center;">Cart</h2>
+  <div id="cart-items" style="border-top: 2px solid #000; padding: 10px;"></div>
+  
+  <script>
+      document.querySelectorAll("div[style*='position: relative']").forEach(div => {
+          div.addEventListener("mouseover", () => {
+              div.querySelector(".watch-info").style.display = "block";
+          });
+          div.addEventListener("mouseout", () => {
+              div.querySelector(".watch-info").style.display = "none";
+          });
+      });
+  </script>
+  
+<footer style="background-color: #abdbe3; color: black; padding: 20px 0; text-align: center;">
+    <div style="display: flex; justify-content: space-between; max-width: 1200px; margin: auto; padding: 20px;">
+        <div style="width: 45%;">
+            <h3>Contact Us</h3>
+            <p>Email: support@pulsewatches.com</p>
+            <p>Phone: 98xxxxxxxx</p>
+           
+            <a href="support.html" style="display: inline-block; margin-top: 10px; padding: 10px 15px; background-color: #ff6600; color: white; text-decoration: none; border-radius: 5px;">Contact Us</a>
+        </div>
+        <div style="width: 45%;">
+            <h3>About Pulse</h3>
+            <p>Pulse is your go-to destination for premium timepieces, offering a curated selection of luxury and stylish watches that blend elegance with precision.</p>
+        </div>
+    </div>
+    <p id="datetime" style="margin-top: 10px;"></p>
+</footer>
+<script>
+    updateDateTime();
+</script>
+</body>
+</html>

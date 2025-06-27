@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-commerce watch website">
+  <meta name="keywords" content="home,product,blog">
+  <meta name="author" content="Saket Yadav">
+  <title>Pulse</title>
+  <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    width: 100%;
+   background-color: #abdbe3;
+    background-size: cover;
+    background-position: center;
+    color: rgb(37, 3, 3);
+    padding: 40px 0;
+    
+  }
+  
+  .navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    
+  }
+  
+  .logo {
+    margin-bottom: 30px;
+   height: 50px;
+   width: 50px;
+    
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: rgb(27, 16, 16);
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #f0a500;
+  }
+  
+  .sign-in a {
+    text-decoration: none;
+    color: rgba(15, 18, 25, 0.635);
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid rgb(7, 32, 14);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .sign-in a:hover {
+    background: white;
+    color: #333;
+  }
+  
+  .navbar-bottom {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .search-box {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #325714;
+    font-size: 16px;
+  }
+  /* Carousel Container */
+.carousel-container {
+    max-width: 100%;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    border: #f0a500;
+}
+
+/* Carousel Styling */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fully covers without being distorted */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+  </style>
+  <script>
+    function updateDateTime() {
+        const now = new Date();
+        const dateTimeString = now.toLocaleString();
+        document.getElementById("datetime").innerText = dateTimeString;
+    }
+    setInterval(updateDateTime, 1000);
+</script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-top">
+      <div class="logo"><img src="../coursework/images/logo/logo.png"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="../coursework/html/shop.html">Shop</a></li>
+        <li><a href="../coursework/html/blog.html">Blog</a></li>
+        <li><a href="../coursework/html/research.html">Research</a></li>
+        <li><a href="../coursework/html/about us.html">About Us</a></li>
+        <li><a href="../coursework/html/support.html">Support</a></li>
+      </ul>
+      <div class="sign-in">
+        <a href="../coursework/html/sign in.html">Sign In</a>
+      </div>
+    </div>
+    
+  </nav>
+  <main class="carousel-container">
+    <div class="carousel">
+        <img src="../coursework/images/home page images/watch1.png" alt="Watch 1" class="carousel-image">
+        <img src="../coursework/images/home page images/watch2.png" alt="Watch 2" class="carousel-image">
+        <img src="../coursework/images/home page images/watch3.png" alt="Watch 3" class="carousel-image">
+    </div>
+</main>
+<h2 style="text-align: center; color: #333;">Featured Products</h2>
+
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+        <!-- Product 1 -->
+        <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="../courseworkt/images/watch photos/p1.png" alt="Brihaspati" style="width: 100%; border-radius: 5px;">
+            <h3 style="margin: 10px 0;">Brihaspati</h3>
+            <p style="text-decoration: line-through; color: gray;">$299</p>
+            <p style="color: red; font-weight: bold;">$239.2</p>
+            <p style="color: gold; font-size: 18px;">★★★★☆ (4.0)</p>
+            </div>
+
+        <!-- Product 2 -->
+        <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="../Development/images/watch photos/p2.png" alt="Everest Gun" style="width: 100%; border-radius: 5px;">
+            <h3 style="margin: 10px 0;">Everest Gun</h3>
+            <p style="text-decoration: line-through; color: gray;">$399</p>
+            <p style="color: red; font-weight: bold;">$319.2</p>
+            <p style="color: gold; font-size: 18px;">★★★★★ (5.0)</p>
+           </div>
+
+        <!-- Product 3 -->
+        <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="../coursework/images/watch photos/p3.png" alt="Alankaar" style="width: 100%; border-radius: 5px;">
+            <h3 style="margin: 10px 0;">Alankaar</h3>
+            <p style="text-decoration: line-through; color: gray;">$349</p>
+            <p style="color: red; font-weight: bold;">$279.2</p>
+            <p style="color: gold; font-size: 18px;">★★★☆☆ (3.0)</p>
+           </div>
+
+        <!-- Product 4 -->
+        <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="../coursework/images/watch photos/p5.png" alt="Ballade" style="width: 100%; border-radius: 5px;">
+            <h3 style="margin: 10px 0;">Ballade</h3>
+            <p style="text-decoration: line-through; color: gray;">$279</p>
+            <p style="color: red; font-weight: bold;">$223.2</p>
+            <p style="color: gold; font-size: 18px;">★★★★☆ (4.5)</p>
+            </div>
+
+    </div>
+    <h2 style="text-align: center; color: #333;">Overview of All Pages</h2>
+
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+        <!-- Products -->
+        <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="../coursework/images/home page images/products.png" alt="Products" style="width: 100%; border-radius: 5px;">
+            <h3 style="margin: 10px 0;">Products</h3>
+            <p style="color: gray;">Explore our exclusive collection of premium timepieces from renowned brands.</p>
+            <a href="../coursework/html/shop.html" style="border: #333;font-weight: bold;">view more</a>
+        </div>
+
+        <!-- Blog -->
+        <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="../coursework/images/home page images/blog.png" alt="Blog" style="width: 100%; border-radius: 5px;">
+            <h3 style="margin: 10px 0;">Blog</h3>
+            <p style="color: gray;">Stay up-to-date with the latest news, trends, and reviews from the world of luxury watches.</p>
+            <a href="../coursework/html/blog.html" style="border: #333;font-weight: bold;">view more</a>
+        </div>
+
+        <!-- Research -->
+        <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="../coursework/images/home page images/research.png" alt="Research" style="width: 100%; border-radius: 5px;">
+            <h3 style="margin: 10px 0;">Research</h3>
+            <p style="color: gray;">Delve into the world of luxury watches and discover the latest research and insights.</p>
+            <a href="../coursework/html/research.html" style="border: #333;font-weight: bold;">view more</a>
+        </div>
+
+        <!-- About Us -->
+        <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="../coursework/images/home page images/aboutus.png" alt="About Us" style="width: 100%; border-radius: 5px;">
+            <h3 style="margin: 10px 0;">About Us</h3>
+            <p style="color: gray;">Learn more about Regal Time and our mission to provide the best luxury watches to our customers.</p>
+            <a href="../coursework/html/about us.html" style="border: #333;font-weight: bold;">view more</a>
+        </div>
+
+    </div>
+    <h2 style="color: #333; text-align: center;">What thousands of happy customers are saying about us</h2>
+
+    <p style="font-size: 18px; color: #333; text-align: center;">
+        ⭐ <b>TrustScore:</b> "Excellent" with <b>4.8/5 stars</b> <br>
+        <span style="font-size: 14px; color: gray;">150,764 reviews from around the globe</span>
+    </p>
+
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+
+        <!-- Review 1 -->
+        <div style="background: white; padding: 20px; border-radius: 10px; width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: left;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <span style="font-size: 16px;">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p style="color: gray; font-size: 12px;">Yesterday</p>
+            <p style="font-style: italic; color: #333;">
+                "Chrono is the best platform for finding luxury watches at great prices. Their secure payment system gives me confidence in every purchase."
+            </p>
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                <div style="width: 40px; height: 40px; background-color: #ccc; border-radius: 50%; text-align: center; line-height: 40px; font-weight: bold;">J</div>
+                <div>
+                    <b>John M.</b> <br>
+                    <span style="font-size: 12px; color: gray;">United States of America</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div style="background: white; padding: 20px; border-radius: 10px; width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: left;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <span style="font-size: 16px;">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p style="color: gray; font-size: 12px;">Yesterday</p>
+            <p style="font-style: italic; color: #333;">
+                "I love how easy it is to compare different models on Chrono. The customer support team is also very responsive!"
+            </p>
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                <div style="width: 40px; height: 40px; background-color: #ccc; border-radius: 50%; text-align: center; line-height: 40px; font-weight: bold;">A</div>
+                <div>
+                    <b>Alice R.</b> <br>
+                    <span style="font-size: 12px; color: gray;">United Kingdom</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div style="background: white; padding: 20px; border-radius: 10px; width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: left;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <span style="font-size: 16px;">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p style="color: gray; font-size: 12px;">This week</p>
+            <p style="font-style: italic; color: #333;">
+                "Great experience! The watch arrived in perfect condition, and the seller was professional. I will definitely buy again."
+            </p>
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                <div style="width: 40px; height: 40px; background-color: #ccc; border-radius: 50%; text-align: center; line-height: 40px; font-weight: bold;">M</div>
+                <div>
+                    <b>Mark S.</b> <br>
+                    <span style="font-size: 12px; color: gray;">Germany</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <footer style="background-color: #abdbe3; color: black; padding: 20px 0; text-align: center;">
+        <div style="display: flex; justify-content: space-between; max-width: 1200px; margin: auto; padding: 20px;">
+            <div style="width: 45%;">
+                <h3>Contact Us</h3>
+                <p>Email: support@pulsewatches.com</p>
+                <p>Phone: 98xxxxxxxx</p>
+               
+                <a href="../coursework/html/support.html" style="display: inline-block; margin-top: 10px; padding: 10px 15px; background-color: #ff6600; color: white; text-decoration: none; border-radius: 5px;">Contact Us</a>
+            </div>
+            <div style="width: 45%;">
+                <h3>About Pulse</h3>
+                <p>Pulse is your go-to destination for premium timepieces, offering a curated selection of luxury and stylish watches that blend elegance with precision.</p>
+            </div>
+        </div>
+        <p id="datetime" style="margin-top: 10px;"></p>
+    </footer>
+    <script>
+        updateDateTime();
+    </script>
+<script>
+    // Array of images
+const images = document.querySelectorAll('.carousel-image');
+let currentIndex = 0;
+
+// Function to change images
+function changeImage() {
+    // Remove 'active' class from current image
+    images[currentIndex].classList.remove('active');
+
+    // Increment index or reset if at last image
+    currentIndex = (currentIndex + 1) % images.length;
+
+    // Add 'active' class to next image
+    images[currentIndex].classList.add('active');
+}
+
+// Set the first image to be visible initially
+images[currentIndex].classList.add('active');
+
+// Change image every 3 seconds
+setInterval(changeImage, 3000);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-commerce watch website">
+    <meta name="keywords" content="home,product,blog">
+    <meta name="author" content="Saket Yadav">
+    <title>Login - Pulse</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #83a4d4, #b6fbff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Container */
+.login-container {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+}
+
+/* Welcome Text */
+.welcome-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pulse-highlight {
+    color: #007BFF;
+    font-style: italic;
+}
+
+.sub-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Button Styling */
+button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class="login-container">
+        <h1 class="welcome-text">Welcome to <span class="pulse-highlight">Pulse</span></h1>
+        <p class="sub-text">Your one-stop shop for timeless elegance</p>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Username or Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email or username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p class="error-message" id="errorMessage"></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const errorMessage = document.getElementById("errorMessage");
+
+    errorMessage.textContent = ""; // Clear previous errors
+
+    // Email validation
+    if (!email) {
+        errorMessage.textContent = "Username or Email is required.";
+        return;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+        errorMessage.textContent = "Please enter a valid email.";
+        return;
+    }
+
+    // Password validation
+    if (!password) {
+        errorMessage.textContent = "Password is required.";
+        return;
+    }
+    if (password.length < 6) {
+        errorMessage.textContent = "Password must be at least 6 characters long.";
+        return;
+    }
+
+    // If validation passes
+    alert("Login successful!");
+});
+
+    </script>
+</body>
+</html>

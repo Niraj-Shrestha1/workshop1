@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-commerce watch website">
+    <meta name="keywords" content="home,product,blog">
+    <meta name="author" content="Saket Yadav">
+    <title>Support - Pulse</title>
+    <link rel="stylesheet" href="../css/support.css">
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            document.getElementById("datetime").innerText = dateTimeString;
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-top">
+          <div class="logo"><img src="../images/logo/logo.png"></div>
+          <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../html/shop.html">Shop</a></li>
+            <li><a href="../html/blog.html">Blog</a></li>
+            <li><a href="../html/research.html">Research</a></li>
+            <li><a href="../html/about us.html">About Us</a></li>
+            <li><a href="../html/support.html">Support</a></li>
+          </ul>
+          <div class="sign-in">
+            <a href="../html/sign in.html">Sign In</a>
+          </div>
+        </div>
+        
+      </nav>
+    <header class="header">
+        <h1>Pulse Support</h1>
+        <p>We're here to help you!</p>
+    </header>
+    
+    <main class="support-container">
+        <!-- Contact Form Section -->
+        <section class="form-section">
+            <h2>Contact Us</h2>
+            <form id="supportForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq">
+                <h3>Q: How can I track my order?</h3>
+                <p>A: You can track your order by logging into your account and visiting the 'Orders' section.</p>
+            </div>
+            <div class="faq">
+                <h3>Q: What is your return policy?</h3>
+                <p>A: We accept returns within 30 days of delivery. The product must be unused and in original packaging.</p>
+            </div>
+            <div class="faq">
+                <h3>Q: How can I contact customer support?</h3>
+                <p>A: You can use the contact form above or email us directly at support@pulse.com.</p>
+            </div>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: support@pulsewatches.com</p>
+            <p>Phone: 98xxxxxxxx</p>
+            
+        </section>
+    </main>
+
+    <footer style="background-color: #abdbe3; color: black; padding: 20px 0; text-align: center;">
+        <div style="display: flex; justify-content: space-between; max-width: 1200px; margin: auto; padding: 20px;">
+            <div style="width: 45%;">
+                <h3>Contact Us</h3>
+                <p>Email: support@pulsewatches.com</p>
+                <p>Phone: 98xxxxxxxx</p>
+               
+                <a href="support.html" style="display: inline-block; margin-top: 10px; padding: 10px 15px; background-color: #ff6600; color: white; text-decoration: none; border-radius: 5px;">Contact Us</a>
+            </div>
+            <div style="width: 45%;">
+                <h3>About Pulse</h3>
+                <p>Pulse is your go-to destination for premium timepieces, offering a curated selection of luxury and stylish watches that blend elegance with precision.</p>
+            </div>
+        </div>
+        <p id="datetime" style="margin-top: 10px;"></p>
+    </footer>
+    <script>
+        updateDateTime();
+    </script>
+</body>
+<script src="../javascript/support.js"></script>
+</html>
